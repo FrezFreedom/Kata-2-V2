@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 require_once(__DIR__ . '/../Tokenizer.php');
 require_once(__DIR__. '/../Token.php');
 
-final class EmailTest extends TestCase
+final class TokenizerTest extends TestCase
 {
     public function testTokenizerClass(): void
     {
