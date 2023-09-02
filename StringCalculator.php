@@ -1,11 +1,21 @@
 <?php
 
+require_once('ParserInterface.php');
 
 class  StringCalculator
 {
+    public function __construct(private ParserInterface $parser)
+    {
+    }
+
     public function add(string $mathPhrase)
     {
-        if ($mathPhrase == '1,2')
-            return 3;
+        $numbers = $this->parser->parseIt($mathPhrase);
+        $ans = 0;
+        foreach ($numbers as $number)
+        {
+            $ans += $number;
+        }
+        return $ans;
     }
 }
